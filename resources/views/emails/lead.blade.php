@@ -1,5 +1,5 @@
 @component('mail::message')
-# Новая заявка с сайта FuckingMachines.ru
+# Новая заявка с сайта aerodver.ru
 
 {{ $subject }}
 <br><br>

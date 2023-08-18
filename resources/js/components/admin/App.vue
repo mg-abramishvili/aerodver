@@ -4,7 +4,7 @@
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
                 <div class="position-sticky pt-3">
                     <div class="px-3 mb-3">
-                        <p class="mb-0" style="color: #fff;">FuckingMachines.ru</p>
+                        <p class="mb-0" style="color: #fff;">aerodver.ru</p>
                     </div>
                     <ul class="nav flex-column">
                         <!-- <li class="nav-separator">separator</li> -->

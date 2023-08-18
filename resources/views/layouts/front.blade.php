@@ -221,7 +221,7 @@
                     @endif
                 </div>
 
-                <p>FuckingMachines.ru © 2020-{{ date('Y') }}</p>
+                <p>aerodver.ru © 2020-{{ date('Y') }}</p>
 
                 <a href="/policy">
                     @if(app()->getLocale() == 'en')

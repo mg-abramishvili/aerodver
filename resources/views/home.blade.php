@@ -1,5 +1,5 @@
 @section('title', 'АэроДверь')
-@section('meta_description', $settings->meta_description ? $settings->meta_description : 'FuckingMachines.ru.')
+@section('meta_description', $settings->meta_description ? $settings->meta_description : 'aerodver.ru.')
 
 @extends('layouts.front')
 @section('content')
