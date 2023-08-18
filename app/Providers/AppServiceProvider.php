@@ -20,11 +20,11 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
 
-        $settings = Setting::find(1);
-        $categories = Category::where('parent_id', null)->orderBy('order', 'asc')->get();
+        // $settings = Setting::find(1);
+        // $categories = Category::where('parent_id', null)->orderBy('order', 'asc')->get();
 
-        View::share('settings', $settings);
+        // View::share('settings', $settings);
 
-        View::share('categories', $categories);
+        // View::share('categories', $categories);
     }
 }

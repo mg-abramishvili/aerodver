@@ -9,6 +9,8 @@ class Firm extends Model
 {
     use HasFactory;
 
+    protected $casts = ['gallery' => 'json'];
+
     public function city()
     {
         return $this->belongsTo(City::class);

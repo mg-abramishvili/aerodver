@@ -7,7 +7,7 @@
         <div class="container">
             <h1 class="title-head">Энергоаудит</h1>
             
-            <ul>
+            <ul class="cities-list">
                 @foreach($cities as $city)
                     <li>
                         <a href="/energoaudit/{{ $city->slug }}/firms">
