@@ -20,7 +20,8 @@ class SettingSeeder extends Seeder
                 'telegram' => '#',
                 'whatsapp' => '#',
                 'youtube' => '#',
-                'instagram' => '#',
+                'tiktok' => '#',
+                'vk' => '#',
                 'email' => '#',
             ],
         ]);

@@ -106,22 +106,8 @@
                                         </li>
                                     @endforeach
                                     <li class="nav-item">
-                                        <a class="nav-link" href="/energoaudit">Заказать ЭнергоАудит</a>
-                                    </li>
-                                    <li class="nav-item">
                                         <a class="nav-link" href="/videos">VHS</a>
                                     </li>
-                                    @foreach($categories->skip(5) as $category)
-                                        <li class="nav-item">
-                                            <a href="/catalog/{{ $category->slug ? $category->slug : $category->id }}" class="nav-link">
-                                                @if(app()->getLocale() == 'en')
-                                                    {{ $category->name_eng }}
-                                                @else
-                                                    {{ $category->name }}
-                                                @endif
-                                            </a>
-                                        </li>
-                                    @endforeach
                                     <li class="nav-item">
                                         <a class="nav-link" href="/delivery-payment">
                                             @if(app()->getLocale() == 'en')
@@ -132,20 +118,20 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="/history">
-                                            @if(app()->getLocale() == 'en')
-                                                Project History
-                                            @else
-                                                История проекта
-                                            @endif
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
                                         <a class="nav-link" href="/partnership">
                                             @if(app()->getLocale() == 'en')
                                                 Partnership
                                             @else
                                                 Сотрудничество
+                                            @endif
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/about">
+                                            @if(app()->getLocale() == 'en')
+                                                About
+                                            @else
+                                                О компании
                                             @endif
                                         </a>
                                     </li>
@@ -196,20 +182,6 @@
                         <a href="{{ $settings->youtube }}">
                             <img src="/img/youtube.svg" alt="youtube">
                             <span>YouTube</span>
-                        </a>
-                    @endif
-
-                    @if($settings->instagram)
-                        <a href="{{ $settings->instagram }}">
-                            <img src="/img/instagram.svg" alt="instagram">
-                            <span>Instagram</span>
-                        </a>
-                    @endif
-
-                    @if($settings->onlyfans)
-                        <a href="{{ $settings->onlyfans }}">
-                            <img src="/img/onlyfans.svg" alt="onlyfans">
-                            <span>OnlyFans</span>
                         </a>
                     @endif
 

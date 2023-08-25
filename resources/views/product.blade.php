@@ -78,7 +78,7 @@
                                 @endphp
                                 ₽
                             @endif
-                            <span>Под заказ / В наличии</span>
+                            <span>В наличии</span>
                         </div>
 
                         <div class="addtocart">

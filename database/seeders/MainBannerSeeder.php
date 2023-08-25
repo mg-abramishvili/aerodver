@@ -14,10 +14,10 @@ class MainBannerSeeder extends Seeder
         DB::table('main_banners')->insert([
             [
                 'id' => 1,
-                'title' => 'Аэродверь',
-                'title_eng' => 'Aero door',
-                'subtitle' => 'с доставкой по всему миру',
-                'subtitle_eng' => 'worldwide delivery',
+                'title' => 'В данный момент Сайт компании AeroDver.ru Находиться в разработке !',
+                'title_eng' => 'В данный момент Сайт компании AeroDver.ru Находиться в разработке !',
+                'subtitle' => 'Оффицальный Старт Продаж Середина Сентября 2023 г.',
+                'subtitle_eng' => 'Оффицальный Старт Продаж Середина Сентября 2023 г.',
             ],
         ]);
     }

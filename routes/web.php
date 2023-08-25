@@ -56,19 +56,19 @@ Route::get('contacts', function () {
     return view('page', compact('page'));
 });
 
-Route::get('partnership', function () {
+Route::get('about', function () {
     $page = Page::find(2);
-    
+
     return view('page', compact('page'));
 });
 
-Route::get('delivery-payment', function () {
+Route::get('partnership', function () {
     $page = Page::find(3);
     
     return view('page', compact('page'));
 });
 
-Route::get('history', function () {
+Route::get('delivery-payment', function () {
     $page = Page::find(4);
     
     return view('page', compact('page'));

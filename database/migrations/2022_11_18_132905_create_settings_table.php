@@ -17,7 +17,12 @@ return new class extends Migration
             $table->string('whatsapp')->nullable();
             $table->string('telegram')->nullable();
             $table->string('youtube')->nullable();
-            $table->string('instagram')->nullable();
+            $table->string('tiktok')->nullable();
+            $table->string('vk')->nullable();
+            $table->longText('header')->nullable();
+            $table->longText('footer')->nullable();
+            $table->string('meta_description')->nullable();
+            $table->string('meta_keywords')->nullable();
             $table->timestamps();
         });
     }

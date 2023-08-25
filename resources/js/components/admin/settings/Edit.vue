@@ -48,18 +48,6 @@
                         </div>
                         <div class="col-12 col-lg-6">
                             <div class="mb-4">
-                                <label class="form-label">Instagram</label>
-                                <input v-model="instagram" type="text" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-6">
-                            <div class="mb-4">
-                                <label class="form-label">OnlyFans</label>
-                                <input v-model="onlyfans" type="text" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-6">
-                            <div class="mb-4">
                                 <label class="form-label">TikTok</label>
                                 <input v-model="tiktok" type="text" class="form-control">
                             </div>
@@ -106,8 +94,6 @@ export default {
             whatsapp: '',
             vk: '',
             youtube: '',
-            instagram: '',
-            onlyfans: '',
             tiktok: '',
             meta_description: '',
             header: '',
@@ -143,8 +129,6 @@ export default {
                 this.whatsapp = response.data.whatsapp
                 this.vk = response.data.vk
                 this.youtube = response.data.youtube
-                this.instagram = response.data.instagram
-                this.onlyfans = response.data.onlyfans
                 this.tiktok = response.data.tiktok
                 this.meta_description = response.data.meta_description
                 this.header = response.data.header
@@ -194,8 +178,6 @@ export default {
                 whatsapp: this.whatsapp,
                 vk: this.vk,
                 youtube: this.youtube,
-                instagram: this.instagram,
-                onlyfans: this.onlyfans,
                 tiktok: this.tiktok,
                 meta_description: this.meta_description,
                 header: this.header,

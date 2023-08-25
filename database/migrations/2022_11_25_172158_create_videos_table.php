@@ -13,6 +13,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('name_eng');
             $table->string('video');
+            $table->string('description')->nullable();
+            $table->string('description_eng')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

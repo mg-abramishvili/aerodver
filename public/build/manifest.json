@@ -8,7 +8,7 @@
     ]
   },
   "resources/js/admin.js": {
-    "file": "assets/admin.9ef25845.js",
+    "file": "assets/admin.f9074d9b.js",
     "src": "resources/js/admin.js",
     "isEntry": true,
     "imports": [
@@ -22,7 +22,7 @@
     "file": "assets/_plugin-vue_export-helper.6ed0049d.js"
   },
   "resources/css/front.css": {
-    "file": "assets/front.ee5902d6.css",
+    "file": "assets/front.04b4371f.css",
     "src": "resources/css/front.css",
     "isEntry": true
   },

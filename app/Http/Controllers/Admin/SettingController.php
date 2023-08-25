@@ -31,8 +31,6 @@ class SettingController extends Controller
         $settings->whatsapp = $request->whatsapp;
         $settings->vk = $request->vk;
         $settings->youtube = $request->youtube;
-        $settings->instagram = $request->instagram;
-        $settings->onlyfans = $request->onlyfans;
         $settings->tiktok = $request->tiktok;
         $settings->meta_description = $request->meta_description;
         $settings->header = $request->header;

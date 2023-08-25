@@ -14,6 +14,8 @@ class DatabaseSeeder extends Seeder
             MainBannerSeeder::class,
             CitySeeder::class,
             FirmSeeder::class,
+            CategorySeeder::class,
+            PageSeeder::class,
         ]);
     }
 }

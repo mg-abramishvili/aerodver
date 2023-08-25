@@ -16,6 +16,8 @@ return new class extends Migration
             $table->integer('parent_id')->nullable();
             $table->string('image');
             $table->integer('order')->default(999);
+            $table->text('description')->nullable();
+            $table->text('gallery')->nullable();
             $table->timestamps();
         });
     }

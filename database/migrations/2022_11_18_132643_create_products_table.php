@@ -21,6 +21,9 @@ return new class extends Migration
             $table->text('gallery');
             $table->string('slug')->nullable();
             $table->string('video')->nullable();
+            $table->integer('view_counter')->default(0);
+            $table->string('subname')->nullable();
+            $table->string('subname_eng')->nullable();
             $table->timestamps();
         });
     }
