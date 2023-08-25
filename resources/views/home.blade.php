@@ -64,7 +64,60 @@
     <div class="main-catalog p11">
         <div class="container">
             <div class="row justify-content-center">
-                @foreach($categories->take(5) as $category)
+                @foreach($categories->take(1) as $category)
+                    <div class="col-12 col-lg-4">
+                        <div class="main-catalog-item">
+                            <a href="/catalog/{{ $category->slug ? $category->slug : $category->id }}">
+                                <div class="main-catalog-item-image">
+                                    <div class="main-catalog-item-image-inner" style="background-image: url({{ $category->image }})"></div>
+                                </div>
+                                <h2 class="main-catalog-item-name">
+                                    @if(app()->getLocale() == 'en')
+                                        {{ $category->name_eng }}
+                                    @else
+                                        {{ $category->name }}
+                                    @endif
+                                </h2>
+                            </a>
+                        </div>
+                    </div>
+                @endforeach
+
+                <div class="col-12 col-lg-4">
+                    <div class="main-catalog-item">
+                        <a href="/energoaudit">
+                            <div class="main-catalog-item-image">
+                                <div class="main-catalog-item-image-inner" style="background-image: url(/img/1692609063.jpg)"></div>
+                            </div>
+                            <h2 class="main-catalog-item-name">
+                                @if(app()->getLocale() == 'en')
+                                    Заказать ЭнергоАудит
+                                @else
+                                    Заказать ЭнергоАудит
+                                @endif
+                            </h2>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-4">
+                    <div class="main-catalog-item">
+                        <a href="/arenda-aerodveri">
+                            <div class="main-catalog-item-image">
+                                <div class="main-catalog-item-image-inner" style="background-image: url(/img/1692609063.jpg)"></div>
+                            </div>
+                            <h2 class="main-catalog-item-name">
+                                @if(app()->getLocale() == 'en')
+                                    Аренда АэроДвери
+                                @else
+                                    Аренда АэроДвери
+                                @endif
+                            </h2>
+                        </a>
+                    </div>
+                </div>
+
+                @foreach($categories->skip(1)->take(2) as $category)
                     <div class="col-12 col-lg-4">
                         <div class="main-catalog-item">
                             <a href="/catalog/{{ $category->slug ? $category->slug : $category->id }}">

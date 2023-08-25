@@ -23,6 +23,8 @@ return new class extends Migration
             $table->longText('footer')->nullable();
             $table->string('meta_description')->nullable();
             $table->string('meta_keywords')->nullable();
+            $table->text('energoaudit_gallery')->nullable();
+            $table->text('energoaudit_text')->nullable();
             $table->timestamps();
         });
     }

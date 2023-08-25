@@ -8,6 +8,7 @@ use App\Models\Video;
 use App\Models\Page;
 use App\Models\City;
 use App\Models\Firm;
+use App\Models\Setting;
 
 Route::get('/', function () {
     $mainbanners = MainBanner::all();
@@ -89,15 +90,34 @@ Route::get('video/{id}', function ($id) {
 });
 
 Route::get('energoaudit', function () {
+    $settings = Setting::find(1);
     $cities = City::all();
 
-    return view('energoaudit', compact('cities'));
+    return view('energoaudit', compact('settings', 'cities'));
 });
 Route::get('energoaudit/{city}/firms', function ($city) {
     $cities = City::all();
     $city = City::where('slug', $city)->with('firms')->first();
 
     return view('energoaudit-firms', compact('city', 'cities'));
+});
+
+Route::get('arenda-aerodveri', function () {
+    $cities = City::all();
+
+    return view('arenda-aerodveri', compact('cities'));
+});
+Route::get('arenda-aerodveri/{city}/firms', function ($city) {
+    $cities = City::all();
+    $city = City::where('slug', $city)->with('firms')->first();
+
+    return view('arenda-aerodveri-firms', compact('city', 'cities'));
+});
+
+Route::get('firm/{id}', function ($id) {
+    $firm = Firm::find($id);
+
+    return view('firm', compact('firm'));
 });
 
 Route::get('/sitemap.xml', function () {

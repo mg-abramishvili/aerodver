@@ -23,6 +23,8 @@ class SettingSeeder extends Seeder
                 'tiktok' => '#',
                 'vk' => '#',
                 'email' => '#',
+                'energoaudit_gallery' => '["\/img\/firms\/2.jpg","\/img\/firms\/3.jpg","\/img\/firms\/1.jpg"]',
+                'energoaudit_text' => '<p>Текст о ЭнергоАудите.</p>'
             ],
         ]);
     }

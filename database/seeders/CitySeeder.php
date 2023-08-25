@@ -18,6 +18,12 @@ class CitySeeder extends Seeder
                 'name_eng' => 'Ufa',
                 'slug' => 'ufa',
             ],
+            [
+                'id' => 2,
+                'name' => 'Москва',
+                'name_eng' => 'Moscow',
+                'slug' => 'moscow',
+            ],
         ]);
     }
 }

@@ -61,7 +61,24 @@
                             <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded">
                                 <div class="navbar-collapse collapse" id="navbarsExample10" style="">
                                     <ul class="navbar-nav">
-                                        @foreach($categories->take(5) as $category)
+                                        @foreach($categories->take(1) as $category)
+                                            <li class="nav-item">
+                                                <a href="/catalog/{{ $category->slug ? $category->slug : $category->id }}" class="nav-link">
+                                                    @if(app()->getLocale() == 'en')
+                                                        {{ $category->name_eng }}
+                                                    @else
+                                                        {{ $category->name }}
+                                                    @endif
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/energoaudit">Заказать ЭнергоАудит</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/arenda-aerodveri">Аренда АэроДвери</a>
+                                        </li>
+                                        @foreach($categories->skip(1)->take(1) as $category)
                                             <li class="nav-item">
                                                 <a href="/catalog/{{ $category->slug ? $category->slug : $category->id }}" class="nav-link">
                                                     @if(app()->getLocale() == 'en')
@@ -94,7 +111,24 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="/">Главная</a>
                                     </li>
-                                    @foreach($categories->take(5) as $category)
+                                    @foreach($categories->take(1) as $category)
+                                        <li class="nav-item">
+                                            <a href="/catalog/{{ $category->slug ? $category->slug : $category->id }}" class="nav-link">
+                                                @if(app()->getLocale() == 'en')
+                                                    {{ $category->name_eng }}
+                                                @else
+                                                    {{ $category->name }}
+                                                @endif
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/energoaudit">Заказать ЭнергоАудит</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/arenda-aerodveri">Аренда АэроДвери</a>
+                                    </li>
+                                    @foreach($categories->skip(1)->take(2) as $category)
                                         <li class="nav-item">
                                             <a href="/catalog/{{ $category->slug ? $category->slug : $category->id }}" class="nav-link">
                                                 @if(app()->getLocale() == 'en')
@@ -157,17 +191,17 @@
         <footer>
             <div class="container">
                 <div class="socials">
-                    @if($settings->telegram)
-                        <a href="{{ $settings->telegram }}">
-                            <img src="/img/telegram.svg" alt="telegram">
-                            <span>Telegram</span>
-                        </a>
-                    @endif
-
                     @if($settings->whatsapp)
                         <a href="{{ $settings->whatsapp }}">
                             <img src="/img/whatsapp.svg" alt="whatsapp">
                             <span>WhatsApp</span>
+                        </a>
+                    @endif
+
+                    @if($settings->telegram)
+                        <a href="{{ $settings->telegram }}">
+                            <img src="/img/telegram.svg" alt="telegram">
+                            <span>Telegram</span>
                         </a>
                     @endif
 
