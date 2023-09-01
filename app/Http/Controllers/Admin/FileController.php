@@ -77,5 +77,40 @@ class FileController extends Controller
                 'Content-Disposition' => 'inline',
             ]);
         }
+
+        if (request()->file('firm_gallery')) {
+            $files = request()->file('firm_gallery');
+
+            for ($i = 0; $i < count($files); $i++) {
+                $file = $files[$i];
+                $filename = time().'.'.$file->extension();
+
+                if (!file_exists(public_path() . '/uploads/firms')) {
+                    mkdir(public_path() . '/uploads/firms', 0755, true);
+                }
+
+                $img = Image::make($file->path());
+
+                $img->resize(2500, 2500, function ($const) {
+                    $const->aspectRatio();
+                });
+                
+                if($request->watermark == 'w2')
+                {
+                    $watermark = Image::make(public_path() . '/img/watermark2.png');
+                    $img->insert($watermark, 'center');
+                }
+                else {
+                    $watermark = Image::make(public_path() . '/img/watermark.png');
+                    $img->insert($watermark, 'center');
+                }
+
+                $img->save(public_path() . '/uploads/firms/' . $filename);
+
+                return \Response::make('/uploads/firms/' . $filename, 200, [
+                    'Content-Disposition' => 'inline',
+                ]);
+            }
+        }
     }
 }

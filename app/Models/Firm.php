@@ -9,7 +9,7 @@ class Firm extends Model
 {
     use HasFactory;
 
-    protected $casts = ['gallery' => 'json'];
+    protected $casts = ['gallery' => 'json', 'videogallery' => 'json'];
 
     public function city()
     {

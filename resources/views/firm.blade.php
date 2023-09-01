@@ -7,23 +7,27 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-7">
-                    <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true, "pageDots": false }'>
-                        @foreach($firm->gallery as $galleryItem)
-                            <div class="carousel-cell">
-                                <img src="{{ $galleryItem }}" alt="{{ $firm->name }}">
-                            </div>
-                        @endforeach
-                    </div>
-
-                    <div class="subcarousel">
-                        <div class="nav-carousel" data-flickity='{ "asNavFor": ".main-carousel", "cellAlign": "left", "contain": true, "pageDots": false }'>
+                    
+                    @if($firm->gallery)
+                        <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true, "pageDots": false }'>
                             @foreach($firm->gallery as $galleryItem)
                                 <div class="carousel-cell">
                                     <img src="{{ $galleryItem }}" alt="{{ $firm->name }}">
                                 </div>
                             @endforeach
                         </div>
-                    </div>
+
+                        <div class="subcarousel">
+                            <div class="nav-carousel" data-flickity='{ "asNavFor": ".main-carousel", "cellAlign": "left", "contain": true, "pageDots": false }'>
+                                @foreach($firm->gallery as $galleryItem)
+                                    <div class="carousel-cell">
+                                        <img src="{{ $galleryItem }}" alt="{{ $firm->name }}">
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    @endif
+
                 </div>
                 <div class="col-12 col-lg-5">
                     <h1 class="title-head">{{ $firm->name }}</h1>
@@ -33,14 +37,19 @@
                     <ul class="firm-ul">
                         <li><strong>Адрес:</strong> г. {{ $firm->city->name }}, {{ $firm->address }}</li>
                         <li><strong>Телефон:</strong> {{ $firm->tel }}</li>
-                        <li><strong>WhatsApp:</strong> {{ $firm->whatsapp }}</li>
+
+                        @if($firm->whatsapp)
+                            <li><strong>WhatsApp:</strong> {{ $firm->whatsapp }}</li>
+                        @endif
                     </ul>
                 </div>
             </div>
 
             <hr>
 
-            {!! $firm->description !!}
+            @if($firm->description)
+                {!! $firm->description !!}
+            @endif
         </div>
     </div>
 @endsection

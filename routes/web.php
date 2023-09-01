@@ -169,6 +169,12 @@ Route::post('_admin/cities', [App\Http\Controllers\Admin\CityController::class, 
 Route::get('_admin/city/{id}', [App\Http\Controllers\Admin\CityController::class, 'city'])->middleware(['auth']);
 Route::put('_admin/city/{id}/update', [App\Http\Controllers\Admin\CityController::class, 'update'])->middleware(['auth']);
 
+// ADMIN FIRMS
+Route::get('_admin/firms', [App\Http\Controllers\Admin\FirmController::class, 'index'])->middleware(['auth']);
+Route::post('_admin/firms', [App\Http\Controllers\Admin\FirmController::class, 'store'])->middleware(['auth']);
+Route::get('_admin/firm/{id}', [App\Http\Controllers\Admin\FirmController::class, 'firm'])->middleware(['auth']);
+Route::put('_admin/firm/{id}/update', [App\Http\Controllers\Admin\FirmController::class, 'update'])->middleware(['auth']);
+
 // ADMIN VIDEOS
 Route::get('_admin/videos', [App\Http\Controllers\Admin\VideoController::class, 'index'])->middleware(['auth']);
 Route::post('_admin/videos', [App\Http\Controllers\Admin\VideoController::class, 'store'])->middleware(['auth']);

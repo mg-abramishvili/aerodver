@@ -25,6 +25,9 @@ import MainBannerMaster from './components/admin/mainbanners/MainBannerMaster.vu
 import Cities from './components/admin/cities/Index.vue'
 import CityMaster from './components/admin/cities/Master.vue'
 
+import Firms from './components/admin/firms/Index.vue'
+import FirmMaster from './components/admin/firms/Master.vue'
+
 const routes = [
     {
         path: '/admin',
@@ -105,6 +108,16 @@ const routes = [
         path: '/admin/cities-master/:id?',
         name: 'CityMaster',
         component: CityMaster
+    },
+    {
+        path: '/admin/firms',
+        name: 'Firms',
+        component: Firms
+    },
+    {
+        path: '/admin/firm-master/:id?',
+        name: 'FirmMaster',
+        component: FirmMaster
     },
 ];
 

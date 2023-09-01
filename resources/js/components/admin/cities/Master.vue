@@ -55,7 +55,7 @@ export default {
             city: {},
 
             name: '',
-            name_end: '',
+            name_eng: '',
             slug: '',
 
             views: {
@@ -129,10 +129,9 @@ export default {
 
             if(!this.$route.params.id) {
                 axios.post('/_admin/cities', {
-                    title: this.title,
-                    title_eng: this.title_eng,
-                    subtitle: this.subtitle,
-                    subtitle_eng: this.subtitle_eng,
+                    name: this.name,
+                    name_eng: this.name_eng,
+                    slug: this.slug,
                 })
                 .then(response => {
                     this.views.saveButton = true
