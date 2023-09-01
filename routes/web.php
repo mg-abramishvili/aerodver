@@ -163,6 +163,12 @@ Route::post('_admin/mainbanners', [App\Http\Controllers\Admin\MainBannerControll
 Route::get('_admin/mainbanner/{id}', [App\Http\Controllers\Admin\MainBannerController::class, 'mainbanner'])->middleware(['auth']);
 Route::put('_admin/mainbanner/{id}/update', [App\Http\Controllers\Admin\MainBannerController::class, 'update'])->middleware(['auth']);
 
+// ADMIN CITIES
+Route::get('_admin/cities', [App\Http\Controllers\Admin\CityController::class, 'index'])->middleware(['auth']);
+Route::post('_admin/cities', [App\Http\Controllers\Admin\CityController::class, 'store'])->middleware(['auth']);
+Route::get('_admin/city/{id}', [App\Http\Controllers\Admin\CityController::class, 'city'])->middleware(['auth']);
+Route::put('_admin/city/{id}/update', [App\Http\Controllers\Admin\CityController::class, 'update'])->middleware(['auth']);
+
 // ADMIN VIDEOS
 Route::get('_admin/videos', [App\Http\Controllers\Admin\VideoController::class, 'index'])->middleware(['auth']);
 Route::post('_admin/videos', [App\Http\Controllers\Admin\VideoController::class, 'store'])->middleware(['auth']);

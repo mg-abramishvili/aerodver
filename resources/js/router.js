@@ -22,6 +22,9 @@ import VideoMaster from './components/admin/Videos/VideoMaster.vue'
 import MainBanners from './components/admin/mainbanners/Index.vue'
 import MainBannerMaster from './components/admin/mainbanners/MainBannerMaster.vue'
 
+import Cities from './components/admin/cities/Index.vue'
+import CityMaster from './components/admin/cities/Master.vue'
+
 const routes = [
     {
         path: '/admin',
@@ -92,6 +95,16 @@ const routes = [
         path: '/admin/mainbanner-master/:id?',
         name: 'MainBannerMaster',
         component: MainBannerMaster
+    },
+    {
+        path: '/admin/cities',
+        name: 'Cities',
+        component: Cities
+    },
+    {
+        path: '/admin/cities-master/:id?',
+        name: 'CityMaster',
+        component: CityMaster
     },
 ];
 
