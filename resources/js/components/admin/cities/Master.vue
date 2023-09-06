@@ -41,6 +41,7 @@
                 </div>
 
                 <button @click="save()" :disabled="!views.saveButton" class="btn btn-primary mb-4">Сохранить</button>
+                <button @click="del()" :disabled="!views.saveButton" class="btn btn-outline-danger ms-2 mb-4">Удалить</button>
             </div>
         </div>
     </div>
@@ -146,10 +147,24 @@ export default {
                         icon: 'error',
                     })
                 })
+            }          
+        },
+        del() {
+            if (confirm("Точно удалить?")) {
+                axios.delete(`/_admin/city/${this.city.id}/delete`)
+                .then((response => {
+                    this.$router.push({ name: 'Cities' })
+                }))
+                .catch(errors => {
+                    this.views.saveButton = true
+                    
+                    return this.$swal({
+                        text: errors.response.data,
+                        icon: 'error',
+                    })
+                })
             }
-
-            
-        }
+        },
     },
     components: {
         Loader,

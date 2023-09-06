@@ -13,6 +13,8 @@ return new class extends Migration
             $table->integer('city_id');
             $table->string('name');
             $table->string('name_eng');
+            $table->boolean('is_audit')->default(true);
+            $table->boolean('is_arenda')->default(true);
             $table->string('address')->nullable();
             $table->string('tel')->nullable();
             $table->string('whatsapp')->nullable();

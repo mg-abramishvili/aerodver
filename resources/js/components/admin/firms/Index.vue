@@ -24,6 +24,13 @@
                                         {{ firm.name }}
                                     </router-link>
                                 </td>
+                                <td>
+                                    {{  firm.city.name  }}
+                                </td>
+                                <td>
+                                    <template v-if="firm.is_audit == true">аудит</template>
+                                    <template v-if="firm.is_arenda == true">аренда</template>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

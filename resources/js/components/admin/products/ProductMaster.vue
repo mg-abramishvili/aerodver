@@ -98,11 +98,11 @@
                     <div class="box mb-4 p-4">
                         <div class="form-check">
                             <input type="radio" id="w1" v-model="watermark" value="w1" class="form-check-input">
-                            <label for="w1" class="form-check-label">Водяной знак (слабее)</label>
+                            <label for="w1" class="form-check-label">Водяной знак (сильнее)</label>
                         </div>
                         <div class="form-check">
                             <input type="radio" id="w2" v-model="watermark" value="w2" class="form-check-input">
-                            <label for="w2" class="form-check-label">Водяной знак (сильнее)</label>
+                            <label for="w2" class="form-check-label">Водяной знак (слабее)</label>
                         </div>
                         <p class="text-muted mb-4"><small>При изменении водяного знака, все фотки придется загружать заново!</small></p>
 

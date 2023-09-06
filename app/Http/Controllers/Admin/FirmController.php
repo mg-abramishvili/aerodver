@@ -10,7 +10,7 @@ class FirmController extends Controller
 {
     public function index()
     {
-        return Firm::all();
+        return Firm::with('city')->get();
     }
 
     public function firm($id)
@@ -42,6 +42,8 @@ class FirmController extends Controller
         $firm->videogallery = $request->videogallery;
         $firm->description = $request->description;
         $firm->description2 = $request->description2;
+        $firm->is_audit = $request->is_audit;
+        $firm->is_arenda = $request->is_arenda;
 
         $firm->save();
     }
@@ -70,7 +72,16 @@ class FirmController extends Controller
         $firm->videogallery = $request->videogallery;
         $firm->description = $request->description;
         $firm->description2 = $request->description2;
+        $firm->is_audit = $request->is_audit;
+        $firm->is_arenda = $request->is_arenda;
 
         $firm->save();
+    }
+
+    public function delete($id)
+    {
+        $firm = Firm::find($id);
+
+        $firm->delete();
     }
 }

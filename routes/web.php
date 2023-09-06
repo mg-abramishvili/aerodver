@@ -97,7 +97,7 @@ Route::get('energoaudit', function () {
 });
 Route::get('energoaudit/{city}/firms', function ($city) {
     $cities = City::all();
-    $city = City::where('slug', $city)->with('firms')->first();
+    $city = City::where('slug', $city)->with(['firms' => function($query) { $query->where('is_audit', true); }])->first();
 
     return view('energoaudit-firms', compact('city', 'cities'));
 });
@@ -109,7 +109,7 @@ Route::get('arenda-aerodveri', function () {
 });
 Route::get('arenda-aerodveri/{city}/firms', function ($city) {
     $cities = City::all();
-    $city = City::where('slug', $city)->with('firms')->first();
+    $city = City::where('slug', $city)->with(['firms' => function($query) { $query->where('is_arenda', true); }])->first();
 
     return view('arenda-aerodveri-firms', compact('city', 'cities'));
 });
@@ -168,12 +168,14 @@ Route::get('_admin/cities', [App\Http\Controllers\Admin\CityController::class, '
 Route::post('_admin/cities', [App\Http\Controllers\Admin\CityController::class, 'store'])->middleware(['auth']);
 Route::get('_admin/city/{id}', [App\Http\Controllers\Admin\CityController::class, 'city'])->middleware(['auth']);
 Route::put('_admin/city/{id}/update', [App\Http\Controllers\Admin\CityController::class, 'update'])->middleware(['auth']);
+Route::delete('_admin/city/{id}/delete', [App\Http\Controllers\Admin\CityController::class, 'delete'])->middleware(['auth']);
 
 // ADMIN FIRMS
 Route::get('_admin/firms', [App\Http\Controllers\Admin\FirmController::class, 'index'])->middleware(['auth']);
 Route::post('_admin/firms', [App\Http\Controllers\Admin\FirmController::class, 'store'])->middleware(['auth']);
 Route::get('_admin/firm/{id}', [App\Http\Controllers\Admin\FirmController::class, 'firm'])->middleware(['auth']);
 Route::put('_admin/firm/{id}/update', [App\Http\Controllers\Admin\FirmController::class, 'update'])->middleware(['auth']);
+Route::delete('_admin/firm/{id}/delete', [App\Http\Controllers\Admin\FirmController::class, 'delete'])->middleware(['auth']);
 
 // ADMIN VIDEOS
 Route::get('_admin/videos', [App\Http\Controllers\Admin\VideoController::class, 'index'])->middleware(['auth']);

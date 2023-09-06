@@ -51,4 +51,16 @@ class CityController extends Controller
 
         $city->save();
     }
+
+    public function delete($id)
+    {
+        $city = City::find($id);
+
+        if($city->firms->count() > 0)
+        {
+            return response('Сначала удалите компании связанные с этим городом', 500);
+        }
+
+        $city->delete();
+    }
 }

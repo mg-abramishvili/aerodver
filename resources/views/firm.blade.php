@@ -37,11 +37,11 @@
                     <ul class="firm-ul">
                         <li><strong>Адрес:</strong> г. {{ $firm->city->name }}, {{ $firm->address }}</li>
                         <li><strong>Телефон:</strong> {{ $firm->tel }}</li>
-
-                        @if($firm->whatsapp)
-                            <li><strong>WhatsApp:</strong> {{ $firm->whatsapp }}</li>
-                        @endif
                     </ul>
+
+                    @if($firm->whatsapp)
+                        <a href="https://wa.me/7{{ $firm->whatsapp }}" class="btn btn-standard btn-chat">Чат с компанией</a>
+                    @endif
                 </div>
             </div>
 

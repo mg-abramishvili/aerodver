@@ -53,6 +53,21 @@
                                 <label class="form-label">Цена (от)</label>
                                 <input v-model="price" type="number" class="form-control">
                             </div>
+                            <div class="col-12 col-lg-8 mb-4">
+                                <label class="form-label">Услуги</label>
+                                <div class="form-check form-check-inline">
+                                    <input v-model="is_audit" class="form-check-input" type="checkbox" value="audit" id="audit">
+                                    <label class="form-check-label" for="audit">
+                                        аудит
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input v-model="is_arenda" class="form-check-input" type="checkbox" value="arenda" id="arenda">
+                                    <label class="form-check-label" for="arenda">
+                                        аренда
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -61,11 +76,11 @@
                     <div class="box mb-4 p-4">
                         <div class="form-check">
                             <input type="radio" id="w1" v-model="watermark" value="w1" class="form-check-input">
-                            <label for="w1" class="form-check-label">Водяной знак (слабее)</label>
+                            <label for="w1" class="form-check-label">Водяной знак (сильнее)</label>
                         </div>
                         <div class="form-check">
                             <input type="radio" id="w2" v-model="watermark" value="w2" class="form-check-input">
-                            <label for="w2" class="form-check-label">Водяной знак (сильнее)</label>
+                            <label for="w2" class="form-check-label">Водяной знак (слабее)</label>
                         </div>
                         <p class="text-muted mb-4"><small>При изменении водяного знака, все фотки придется загружать заново!</small></p>
 
@@ -121,6 +136,9 @@ export default {
             whatsapp: '',
             price: 0,
             firm_gallery: '',
+
+            is_audit: false,
+            is_arenda: false,
 
             cities: [],
 
@@ -223,6 +241,13 @@ export default {
                 this.price = response.data.price
                 this.description = response.data.description
                 this.description2 = response.data.description2
+                
+                if(response.data.is_audit == 1) {
+                    this.is_audit = true
+                }
+                if(response.data.is_arenda == 1) {
+                    this.is_arenda = true
+                }
 
                 if(response.data.gallery) {
                     this.filepond_firm_gallery_edit = response.data.gallery.map(function(element){
@@ -294,6 +319,8 @@ export default {
                     price: this.price,
                     description: this.description,
                     gallery: this.firm_gallery,
+                    is_audit: this.is_audit,
+                    is_arenda: this.is_arenda,
                 })
                 .then(response => {
                     this.views.saveButton = true
@@ -321,6 +348,8 @@ export default {
                     price: this.price,
                     description: this.description,
                     gallery: this.firm_gallery,
+                    is_audit: this.is_audit,
+                    is_arenda: this.is_arenda,
                 })
                 .then(response => {
                     this.views.saveButton = true
@@ -335,10 +364,16 @@ export default {
                         icon: 'error',
                     })
                 })
+            }   
+        },
+        del() {
+            if (confirm("Точно удалить?")) {
+                axios.delete(`/_admin/firm/${this.firm.id}/delete`)
+                .then((response => {
+                    this.$router.push({ name: 'Firms' })
+                }))
             }
-
-            
-        }
+        },
     },
     components: {
         Loader,

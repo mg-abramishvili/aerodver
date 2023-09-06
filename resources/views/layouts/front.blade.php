@@ -212,6 +212,13 @@
                         </a>
                     @endif
 
+                    @if($settings->youtube)
+                        <a href="{{ $settings->youtube }}">
+                            <img src="/img/youtube.svg" alt="youtube">
+                            <span>YouTube</span>
+                        </a>
+                    @endif
+
                     @if($settings->vk)
                         <a href="{{ $settings->vk }}">
                             <img src="/img/vk.svg" alt="vk">
@@ -219,10 +226,10 @@
                         </a>
                     @endif
 
-                    @if($settings->youtube)
-                        <a href="{{ $settings->youtube }}">
-                            <img src="/img/youtube.svg" alt="youtube">
-                            <span>YouTube</span>
+                    @if($settings->dzen)
+                        <a href="{{ $settings->dzen }}">
+                            <img src="/img/dzen.svg" alt="dzen">
+                            <span>Дзен</span>
                         </a>
                     @endif
 

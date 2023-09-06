@@ -1252,6 +1252,23 @@ footer a {
     margin: 0;
     padding: 0;
     list-style: none;
+    margin-bottom: 25px;
+}
+.btn-chat {
+    position: relative;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.btn-chat:before {
+    content: '';
+    background: url('/img/chat.svg');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
 }
 .firm-page .firm-price {
     font-size: 20px;
