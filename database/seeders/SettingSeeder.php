@@ -26,10 +26,10 @@ class SettingSeeder extends Seeder
                 'email' => '#',
                 'energoaudit_gallery' => '["\/img\/firms\/2.jpg","\/img\/firms\/3.jpg","\/img\/firms\/1.jpg"]',
                 'energoaudit_text' => '<p>Текст о ЭнергоАудите.</p>',
-                'energoaudit_icon' => '/img/audit.jpg',
+                'energoaudit_icon' => '/img/1692609063.jpg',
                 'energoarenda_gallery' => '["\/img\/firms\/2.jpg","\/img\/firms\/3.jpg","\/img\/firms\/1.jpg"]',
                 'energoarenda_text' => '<p>Текст об аренде.</p>',
-                'energoarenda_icon' => '/img/arenda.jpg'
+                'energoarenda_icon' => '/img/1692609063.jpg'
             ],
         ]);
     }

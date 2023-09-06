@@ -16,6 +16,8 @@ import Page from './components/admin/pages/Edit.vue'
 
 import Settings from './components/admin/settings/Edit.vue'
 
+import AuditArenda from './components/admin/audit-arenda/Edit.vue'
+
 import Videos from './components/admin/Videos/Index.vue'
 import VideoMaster from './components/admin/Videos/VideoMaster.vue'
 
@@ -73,6 +75,11 @@ const routes = [
         path: '/admin/settings',
         name: 'Settings',
         component: Settings
+    },
+    {
+        path: '/admin/audit-arenda',
+        name: 'AuditArenda',
+        component: AuditArenda
     },
     {
         path: '/admin/leads',

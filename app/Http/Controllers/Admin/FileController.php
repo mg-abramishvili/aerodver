@@ -131,5 +131,111 @@ class FileController extends Controller
                 ]);
             }
         }
+
+        if (request()->file('energoaudit_gallery')) {
+            $files = request()->file('energoaudit_gallery');
+
+            for ($i = 0; $i < count($files); $i++) {
+                $file = $files[$i];
+                $filename = time().'.'.$file->extension();
+
+                if (!file_exists(public_path() . '/uploads/audit')) {
+                    mkdir(public_path() . '/uploads/audit', 0755, true);
+                }
+
+                $img = Image::make($file->path());
+
+                $img->resize(2500, 2500, function ($const) {
+                    $const->aspectRatio();
+                });
+                
+                if($request->watermark == 'w2')
+                {
+                    $watermark = Image::make(public_path() . '/img/watermark2.png');
+                    $img->insert($watermark, 'center');
+                }
+                else {
+                    $watermark = Image::make(public_path() . '/img/watermark.png');
+                    $img->insert($watermark, 'center');
+                }
+
+                $img->save(public_path() . '/uploads/audit/' . $filename);
+
+                return \Response::make('/uploads/audit/' . $filename, 200, [
+                    'Content-Disposition' => 'inline',
+                ]);
+            }
+        }
+
+        if (request()->file('energoarenda_gallery')) {
+            $files = request()->file('energoarenda_gallery');
+
+            for ($i = 0; $i < count($files); $i++) {
+                $file = $files[$i];
+                $filename = time().'.'.$file->extension();
+
+                if (!file_exists(public_path() . '/uploads/arenda')) {
+                    mkdir(public_path() . '/uploads/arenda', 0755, true);
+                }
+
+                $img = Image::make($file->path());
+
+                $img->resize(2500, 2500, function ($const) {
+                    $const->aspectRatio();
+                });
+                
+                if($request->watermark == 'w2')
+                {
+                    $watermark = Image::make(public_path() . '/img/watermark2.png');
+                    $img->insert($watermark, 'center');
+                }
+                else {
+                    $watermark = Image::make(public_path() . '/img/watermark.png');
+                    $img->insert($watermark, 'center');
+                }
+
+                $img->save(public_path() . '/uploads/arenda/' . $filename);
+
+                return \Response::make('/uploads/audit/' . $filename, 200, [
+                    'Content-Disposition' => 'inline',
+                ]);
+            }
+        }
+
+        if (request()->file('energoaudit_icon')) {
+            $file = request()->file('energoaudit_icon');
+            $filename = time().'.'.$file->extension();
+
+            if (!file_exists(public_path() . '/uploads/')) {
+                mkdir(public_path() . '/uploads/', 0755, true);
+            }
+
+            $img = Image::make($file->path());
+            $img->resize(700, 700, function ($const) {
+                $const->aspectRatio();
+            })->save(public_path() . '/uploads/' . $filename);
+
+            return \Response::make('/uploads/' . $filename, 200, [
+                'Content-Disposition' => 'inline',
+            ]);
+        }
+
+        if (request()->file('energoarenda_icon')) {
+            $file = request()->file('energoarenda_icon');
+            $filename = time().'.'.$file->extension();
+
+            if (!file_exists(public_path() . '/uploads/')) {
+                mkdir(public_path() . '/uploads/', 0755, true);
+            }
+
+            $img = Image::make($file->path());
+            $img->resize(700, 700, function ($const) {
+                $const->aspectRatio();
+            })->save(public_path() . '/uploads/' . $filename);
+
+            return \Response::make('/uploads/' . $filename, 200, [
+                'Content-Disposition' => 'inline',
+            ]);
+        }
     }
 }

@@ -87,7 +87,7 @@
                     <div class="main-catalog-item">
                         <a href="/energoaudit">
                             <div class="main-catalog-item-image">
-                                <div class="main-catalog-item-image-inner" style="background-image: url(/img/1692609063.jpg)"></div>
+                                <div class="main-catalog-item-image-inner" style="background-image: url({{ $settings->energoaudit_icon }})"></div>
                             </div>
                             <h2 class="main-catalog-item-name">
                                 @if(app()->getLocale() == 'en')
@@ -104,7 +104,7 @@
                     <div class="main-catalog-item">
                         <a href="/arenda-aerodveri">
                             <div class="main-catalog-item-image">
-                                <div class="main-catalog-item-image-inner" style="background-image: url(/img/1692609063.jpg)"></div>
+                                <div class="main-catalog-item-image-inner" style="background-image: url({{ $settings->energoarenda_icon }})"></div>
                             </div>
                             <h2 class="main-catalog-item-name">
                                 @if(app()->getLocale() == 'en')

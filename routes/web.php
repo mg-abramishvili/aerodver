@@ -157,6 +157,9 @@ Route::put('_admin/page/{id}/update', [App\Http\Controllers\Admin\PageController
 Route::get('_admin/settings', [App\Http\Controllers\Admin\SettingController::class, 'index'])->middleware(['auth']);
 Route::post('_admin/settings', [App\Http\Controllers\Admin\SettingController::class, 'update'])->middleware(['auth']);
 
+// ADMIN SETTINGS AUDIT ARENDA
+Route::post('_admin/settings-aa', [App\Http\Controllers\Admin\SettingController::class, 'updateAuditArenda'])->middleware(['auth']);
+
 // ADMIN MAIN BANNERS
 Route::get('_admin/mainbanners', [App\Http\Controllers\Admin\MainBannerController::class, 'index'])->middleware(['auth']);
 Route::post('_admin/mainbanners', [App\Http\Controllers\Admin\MainBannerController::class, 'store'])->middleware(['auth']);

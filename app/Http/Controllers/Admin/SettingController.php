@@ -38,4 +38,27 @@ class SettingController extends Controller
 
         $settings->save();
     }
+
+    public function updateAuditArenda(Request $request)
+    {
+        $this->validate($request, [
+            'energoaudit_text' => 'required',
+            'energoaudit_gallery' => 'required',
+            'energoaudit_icon' => 'required',
+            'energoarenda_text' => 'required',
+            'energoarenda_gallery' => 'required',
+            'energoarenda_icon' => 'required',
+        ]);
+
+        $settings = Setting::find(1);
+
+        $settings->energoaudit_text = $request->energoaudit_text;
+        $settings->energoaudit_gallery = $request->energoaudit_gallery;
+        $settings->energoaudit_icon = $request->energoaudit_icon;
+        $settings->energoarenda_text = $request->energoarenda_text;
+        $settings->energoarenda_gallery = $request->energoarenda_gallery;
+        $settings->energoarenda_icon = $request->energoarenda_icon;
+
+        $settings->save();
+    }
 }

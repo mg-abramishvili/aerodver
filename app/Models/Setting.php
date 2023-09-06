@@ -9,5 +9,8 @@ class Setting extends Model
 {
     use HasFactory;
 
-    protected $casts = ['energoaudit_gallery' => 'json'];
+    protected $casts = [
+        'energoaudit_gallery' => 'json',
+        'energoarenda_gallery' => 'json',
+    ];
 }
