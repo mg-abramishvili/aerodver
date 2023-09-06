@@ -117,7 +117,7 @@
                     </div>
                 </div>
 
-                @foreach($categories->skip(2)->take(2) as $category)
+                @foreach($categories->skip(2)->take(1) as $category)
                     <div class="col-12 col-lg-4">
                         <div class="main-catalog-item">
                             <a href="/catalog/{{ $category->slug ? $category->slug : $category->id }}">
