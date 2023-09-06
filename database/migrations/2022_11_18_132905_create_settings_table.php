@@ -18,13 +18,18 @@ return new class extends Migration
             $table->string('telegram')->nullable();
             $table->string('youtube')->nullable();
             $table->string('tiktok')->nullable();
+            $table->string('dzen')->nullable();
             $table->string('vk')->nullable();
             $table->longText('header')->nullable();
             $table->longText('footer')->nullable();
             $table->string('meta_description')->nullable();
             $table->string('meta_keywords')->nullable();
             $table->text('energoaudit_gallery')->nullable();
-            $table->text('energoaudit_text')->nullable();
+            $table->longText('energoaudit_text')->nullable();
+            $table->string('energoaudit_icon')->nullable();
+            $table->text('energoarenda_gallery')->nullable();
+            $table->longText('energoarenda_text')->nullable();
+            $table->string('energoarenda_icon')->nullable();
             $table->timestamps();
         });
     }

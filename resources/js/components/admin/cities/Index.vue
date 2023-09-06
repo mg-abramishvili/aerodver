@@ -6,7 +6,7 @@
                     <h1>Города</h1>
                 </div>
                 <div class="col-12 col-lg-5 text-end">
-                    
+                    <router-link :to="{name: 'CityMaster'}" class="btn btn-primary me-2">Добавить город</router-link>
                 </div>
             </div>
         </div>
