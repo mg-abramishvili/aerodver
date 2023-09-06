@@ -64,7 +64,7 @@
     <div class="main-catalog p11">
         <div class="container">
             <div class="row justify-content-center">
-                @foreach($categories->take(1) as $category)
+                @foreach($categories->take(2) as $category)
                     <div class="col-12 col-lg-4">
                         <div class="main-catalog-item">
                             <a href="/catalog/{{ $category->slug ? $category->slug : $category->id }}">
@@ -117,7 +117,7 @@
                     </div>
                 </div>
 
-                @foreach($categories->skip(1)->take(2) as $category)
+                @foreach($categories->skip(2)->take(2) as $category)
                     <div class="col-12 col-lg-4">
                         <div class="main-catalog-item">
                             <a href="/catalog/{{ $category->slug ? $category->slug : $category->id }}">
