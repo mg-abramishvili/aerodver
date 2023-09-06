@@ -112,5 +112,24 @@ class FileController extends Controller
                 ]);
             }
         }
+
+        if (request()->file('firm_videogallery')) {
+            $files = request()->file('firm_videogallery');
+
+            for ($i = 0; $i < count($files); $i++) {
+                $file = $files[$i];
+                $filename = time().'.'.$file->extension();
+
+                if (!file_exists(public_path() . '/uploads/firm-videos')) {
+                    mkdir(public_path() . '/uploads/firm-videos', 0755, true);
+                }
+
+                $file->move(public_path() . '/uploads/firm-videos', $filename);
+
+                return \Response::make('/uploads/firm-videos/' . $filename, 200, [
+                    'Content-Disposition' => 'inline',
+                ]);
+            }
+        }
     }
 }

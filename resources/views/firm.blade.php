@@ -50,6 +50,12 @@
             @if($firm->description)
                 {!! $firm->description !!}
             @endif
+
+            <hr>
+
+            @foreach($firm->videogallery as $video)
+                <video src="{{ $video }}" class="video" controls></video>
+            @endforeach
         </div>
     </div>
 @endsection

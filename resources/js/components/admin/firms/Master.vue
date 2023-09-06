@@ -100,6 +100,22 @@
 
                 <div class="mb-3">
                     <div class="box mb-4 p-4">
+                        <label class="form-label">Видео</label>
+                        <file-pond
+                            name="firm_videogallery[]"
+                            ref="firm_videogallery"
+                            label-idle="Выбрать видео..."
+                            v-bind:allow-multiple="false"
+                            v-bind:allow-reorder="true"
+                            accepted-file-types="video/mp4"
+                            :server="server"
+                            v-bind:files="filepond_firm_videogallery_edit"
+                        />
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="box mb-4 p-4">
                         <label class="form-label">Описание</label>
                         <ckeditor :editor="editor" v-model="description" :config="editorConfig"></ckeditor>
                     </div>
@@ -136,6 +152,7 @@ export default {
             whatsapp: '',
             price: 0,
             firm_gallery: '',
+            firm_videogallery: '',
 
             is_audit: false,
             is_arenda: false,
@@ -148,6 +165,8 @@ export default {
 
             filepond_firm_gallery: [],
             filepond_firm_gallery_edit: [],
+            filepond_firm_videogallery: [],
+            filepond_firm_videogallery_edit: [],
 
             watermark: 'w1',
 
@@ -262,6 +281,19 @@ export default {
                     })
                 }
 
+                if(response.data.videogallery) {
+                    this.filepond_firm_videogallery_edit = response.data.videogallery.map(function(element){
+                        {
+                            return {
+                                source: element,
+                                options: {
+                                    type: 'local',
+                                }
+                            } 
+                        }
+                    })
+                }
+
                 this.views.loading = false
             })
         },
@@ -271,6 +303,15 @@ export default {
                 document.getElementsByName("firm_gallery[]").forEach((i) => {
                     if(i.value) {
                         this.firm_gallery.push(i.value)
+                    }
+                })
+            }
+
+            if(document.getElementsByName("firm_videogallery[]")) {
+                this.firm_videogallery = []
+                document.getElementsByName("firm_videogallery[]").forEach((i) => {
+                    if(i.value) {
+                        this.firm_videogallery.push(i.value)
                     }
                 })
             }
@@ -319,6 +360,7 @@ export default {
                     price: this.price,
                     description: this.description,
                     gallery: this.firm_gallery,
+                    videogallery: this.firm_videogallery,
                     is_audit: this.is_audit,
                     is_arenda: this.is_arenda,
                 })
@@ -348,6 +390,7 @@ export default {
                     price: this.price,
                     description: this.description,
                     gallery: this.firm_gallery,
+                    videogallery: this.firm_videogallery,
                     is_audit: this.is_audit,
                     is_arenda: this.is_arenda,
                 })
