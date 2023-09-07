@@ -32,7 +32,7 @@
                                 <input v-model="subtitle" type="text" class="form-control">
                             </div>
                             <div class="col-12 col-lg-6 mb-4">
-                                <label class="form-label">Заголовок (RUS)</label>
+                                <label class="form-label">Заголовок (ENG)</label>
                                 <input v-model="title_eng" type="text" class="form-control">
                             </div>
                             <div class="col-12 col-lg-6 mb-4">
