@@ -196,7 +196,7 @@ class FileController extends Controller
 
                 $img->save(public_path() . '/uploads/arenda/' . $filename);
 
-                return \Response::make('/uploads/audit/' . $filename, 200, [
+                return \Response::make('/uploads/arenda/' . $filename, 200, [
                     'Content-Disposition' => 'inline',
                 ]);
             }
