@@ -1,25 +1,25 @@
 {
   "resources/js/front.js": {
-    "file": "assets/front.887adf6b.js",
+    "file": "assets/front.e420add0.js",
     "src": "resources/js/front.js",
     "isEntry": true,
     "imports": [
-      "__plugin-vue_export-helper.1f3ebb47.js"
+      "__plugin-vue_export-helper.6ed0049d.js"
     ]
   },
   "resources/js/admin.js": {
-    "file": "assets/admin.3f193917.js",
+    "file": "assets/admin.3c1cb463.js",
     "src": "resources/js/admin.js",
     "isEntry": true,
     "imports": [
-      "__plugin-vue_export-helper.1f3ebb47.js"
+      "__plugin-vue_export-helper.6ed0049d.js"
     ],
     "css": [
       "assets/admin.a33e44a2.css"
     ]
   },
-  "__plugin-vue_export-helper.1f3ebb47.js": {
-    "file": "assets/_plugin-vue_export-helper.1f3ebb47.js"
+  "__plugin-vue_export-helper.6ed0049d.js": {
+    "file": "assets/_plugin-vue_export-helper.6ed0049d.js"
   },
   "resources/css/front.css": {
     "file": "assets/front.cb4ace65.css",

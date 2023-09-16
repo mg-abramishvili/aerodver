@@ -1,4 +1,4 @@
-@section('title', 'АэроДверь')
+@section('title', 'Купить АэроДверь - AeroDver.ru Российский аналог - retrotec')
 @section('meta_description', $settings->meta_description ? $settings->meta_description : 'aerodver.ru.')
 
 @extends('layouts.front')

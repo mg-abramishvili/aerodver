@@ -52,6 +52,12 @@
                                 <input v-model="tiktok" type="text" class="form-control">
                             </div>
                         </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="mb-4">
+                                <label class="form-label">Дзен</label>
+                                <input v-model="dzen" type="text" class="form-control">
+                            </div>
+                        </div>
                     </div>
 
                     <div class="mb-4">
@@ -95,6 +101,7 @@ export default {
             vk: '',
             youtube: '',
             tiktok: '',
+            dzen: '',
             meta_description: '',
             header: '',
             footer: '',
@@ -130,6 +137,7 @@ export default {
                 this.vk = response.data.vk
                 this.youtube = response.data.youtube
                 this.tiktok = response.data.tiktok
+                this.dzen = response.data.dzen
                 this.meta_description = response.data.meta_description
                 this.header = response.data.header
                 this.footer = response.data.footer
@@ -179,6 +187,7 @@ export default {
                 vk: this.vk,
                 youtube: this.youtube,
                 tiktok: this.tiktok,
+                dzen: this.dzen,
                 meta_description: this.meta_description,
                 header: this.header,
                 footer: this.footer,

@@ -32,6 +32,7 @@ class SettingController extends Controller
         $settings->vk = $request->vk;
         $settings->youtube = $request->youtube;
         $settings->tiktok = $request->tiktok;
+        $settings->dzen = $request->dzen;
         $settings->meta_description = $request->meta_description;
         $settings->header = $request->header;
         $settings->footer = $request->footer;
