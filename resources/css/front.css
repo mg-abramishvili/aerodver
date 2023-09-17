@@ -1277,6 +1277,9 @@ footer a {
     margin-bottom: 25px;
     font-weight: 700;
 }
+.firm-page video {
+    max-width: 100%;
+}
 
 .energoaudit-gallery {
     background-color: rgba(255,255,255,0.1);
