@@ -39,6 +39,6 @@ class LeadController extends Controller
             session()->forget('cart');
         }
 
-        Mail::to('aerodver.ru@mail.ru')->send(new LeadMail($lead));
+        Mail::to('mg@abramishvili.net')->send(new LeadMail($lead));
     }
 }
